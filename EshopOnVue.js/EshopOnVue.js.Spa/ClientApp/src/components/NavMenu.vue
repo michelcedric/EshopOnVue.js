@@ -2,7 +2,13 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand">Vue JS Template for .NET 6</a>
+                <article class="row">
+                    <section class="col-lg-7 col-md-6 col-xs-12">
+                        <a href="/">
+                            <img src="../assets/brand.png" alt="eShop On Web" />
+                        </a>
+                    </section>
+                </article>
                 <button class="navbar-toggler"
                         type="button"
                         data-toggle="collapse"
@@ -16,7 +22,7 @@
                     <ul class="navbar-nav flex-grow">
                         <li class="nav-item">
                             <router-link :to="{ name: 'Home' }" class="nav-link text-dark">Home</router-link>
-                           
+
                         </li>
                         <li class="nav-item">
                             <router-link :to="{ name: 'Counter' }" class="nav-link text-dark">Counter</router-link>
