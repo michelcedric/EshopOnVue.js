@@ -3,7 +3,7 @@
         <h1>{{ msg }}</h1>
         <img src="../assets/logo.png" />
         <p>
-            Template for Vue JS 3.0 and .NET 5 applications developed by <b>Alexandre Malavasi.</b><br />
+            Template for Vue JS 3.0 and .NET 6 applications developed by <b>Alexandre Malavasi.</b><br />
             In order to get more content on Vue JS and .NET platform, please follow on my social media profiles:
         </p>
         <ul>
