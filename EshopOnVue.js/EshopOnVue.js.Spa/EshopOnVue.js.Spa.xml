@@ -4,6 +4,61 @@
         <name>EshopOnVue.js.Spa</name>
     </assembly>
     <members>
+        <member name="T:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemDto">
+            <summary>
+            Represent an element form the catalog
+            </summary>
+        </member>
+        <member name="P:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemDto.Id">
+            <summary>
+            The unique identifier
+            </summary>
+        </member>
+        <member name="P:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemDto.Name">
+            <summary>
+            The name of the item
+            </summary>
+        </member>
+        <member name="P:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemDto.PictureUri">
+            <summary>
+            Path without domain of the item's picture
+            </summary>
+        </member>
+        <member name="P:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemDto.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="T:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler.Handle(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EshopOnVue.js.Spa.Controllers.CatalogController">
+            <summary>
+            Controller to manage the catalog of product
+            </summary>
+        </member>
+        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogController.#ctor(MediatR.IMediator)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogController.List(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
+            <summary>
+            Get all catalog items available
+            </summary>  
+            <returns></returns>
+        </member>
         <member name="T:EshopOnVue.js.Spa.Controllers.WeatherForecastController">
             <summary>
             Endp point to manage WeatherForecast
