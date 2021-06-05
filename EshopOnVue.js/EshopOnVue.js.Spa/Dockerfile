@@ -4,6 +4,11 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 
+RUN apt-get update -y
+RUN apt-get install curl gnupg -y
+RUN curl -sL https://deb.nodesource.com/setup_14.x |  bash -
+RUN apt-get install -y nodejs
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["EshopOnVue.js.Spa/EshopOnVue.js.Spa.csproj", "EshopOnVue.js.Spa/"]
