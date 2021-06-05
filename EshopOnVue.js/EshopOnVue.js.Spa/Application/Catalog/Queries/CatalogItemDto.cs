@@ -1,4 +1,6 @@
-﻿namespace EshopOnVue.js.Spa.Application.Catalog.Queries
+﻿using System;
+
+namespace EshopOnVue.js.Spa.Application.Catalog.Queries
 {
     /// <summary>
     /// Represent an element form the catalog
@@ -8,7 +10,7 @@
         /// <summary>
         /// The unique identifier
         /// </summary>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// The name of the item

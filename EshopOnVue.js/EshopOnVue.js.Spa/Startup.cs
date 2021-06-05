@@ -1,3 +1,4 @@
+using EshopOnVue.js.Infrastructure.Data;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -54,6 +55,8 @@ namespace EshopOnVue.js.Spa
                 c.IncludeXmlComments(xmlPath);
             });
 
+            Infrastructure.Dependencies.ConfigureServices(_configuration, services);
+
             services.AddMediatR(typeof(Startup));
         }
 
@@ -62,7 +65,7 @@ namespace EshopOnVue.js.Spa
         /// </summary>
         /// <param name="app"></param>
         /// <param name="env"></param>
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, EshopContext context)
         {
             if (env.IsDevelopment())
             {
@@ -84,6 +87,8 @@ namespace EshopOnVue.js.Spa
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Eshop on web Api V1");
             });
+
+            CatalogItemSeed.Seed(context);
 
             app.UseSpa(spa =>
             {

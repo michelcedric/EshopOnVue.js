@@ -5,7 +5,17 @@ VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{66C0DCFF-3D29-4259-AD0E-EBA28AF6C661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Spa", "EshopOnVue.js.Spa\EshopOnVue.js.Spa.csproj", "{1F604CA2-3756-4834-B7FB-774BFC569A81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Spa", "EshopOnVue.js.Spa\EshopOnVue.js.Spa.csproj", "{1F604CA2-3756-4834-B7FB-774BFC569A81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Infrastructure", "EshopOnVue.js.Infrastructure\EshopOnVue.js.Infrastructure.csproj", "{217005C4-711E-4A07-AC02-7D2096352C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Core", "EshopOnVue.js.Core\EshopOnVue.js.Core.csproj", "{3E2FB14B-EA01-4DE6-AD19-BEB677916D48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{981C1FE1-AF11-4E48-A6D0-BC10571DDF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Core.Tests", "EshopOnVue.js.Core.Tests\EshopOnVue.js.Core.Tests.csproj", "{53F785FA-91E9-4C26-8449-318AAF1B57BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Spa.Tests", "EshopOnVue.js.Spa.Tests\EshopOnVue.js.Spa.Tests.csproj", "{921DB987-EECD-4F31-B7E4-C8126BF91672}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +27,32 @@ Global
 		{1F604CA2-3756-4834-B7FB-774BFC569A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F604CA2-3756-4834-B7FB-774BFC569A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F604CA2-3756-4834-B7FB-774BFC569A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{217005C4-711E-4A07-AC02-7D2096352C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217005C4-711E-4A07-AC02-7D2096352C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217005C4-711E-4A07-AC02-7D2096352C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217005C4-711E-4A07-AC02-7D2096352C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2FB14B-EA01-4DE6-AD19-BEB677916D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2FB14B-EA01-4DE6-AD19-BEB677916D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2FB14B-EA01-4DE6-AD19-BEB677916D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2FB14B-EA01-4DE6-AD19-BEB677916D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F785FA-91E9-4C26-8449-318AAF1B57BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F785FA-91E9-4C26-8449-318AAF1B57BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F785FA-91E9-4C26-8449-318AAF1B57BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F785FA-91E9-4C26-8449-318AAF1B57BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921DB987-EECD-4F31-B7E4-C8126BF91672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921DB987-EECD-4F31-B7E4-C8126BF91672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921DB987-EECD-4F31-B7E4-C8126BF91672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921DB987-EECD-4F31-B7E4-C8126BF91672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1F604CA2-3756-4834-B7FB-774BFC569A81} = {66C0DCFF-3D29-4259-AD0E-EBA28AF6C661}
+		{217005C4-711E-4A07-AC02-7D2096352C17} = {66C0DCFF-3D29-4259-AD0E-EBA28AF6C661}
+		{3E2FB14B-EA01-4DE6-AD19-BEB677916D48} = {66C0DCFF-3D29-4259-AD0E-EBA28AF6C661}
+		{53F785FA-91E9-4C26-8449-318AAF1B57BC} = {981C1FE1-AF11-4E48-A6D0-BC10571DDF33}
+		{921DB987-EECD-4F31-B7E4-C8126BF91672} = {981C1FE1-AF11-4E48-A6D0-BC10571DDF33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54C69A19-0A5A-449C-9033-D3C095E24CCA}

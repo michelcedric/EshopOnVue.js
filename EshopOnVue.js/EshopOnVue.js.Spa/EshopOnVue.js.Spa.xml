@@ -34,6 +34,12 @@
             
             </summary>
         </member>
+        <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler.#ctor(EshopOnVue.js.Core.Interfaces.Repositories.ICatalogItemsRepository)">
+            <summary>
+            
+            </summary>
+            <param name="catalogItemsRepository"></param>
+        </member>
         <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler.Handle(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest,System.Threading.CancellationToken)">
             <summary>
             
@@ -111,7 +117,7 @@
             </summary>
             <param name="services"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+        <member name="M:EshopOnVue.js.Spa.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,EshopOnVue.js.Infrastructure.Data.EshopContext)">
             <summary>
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
