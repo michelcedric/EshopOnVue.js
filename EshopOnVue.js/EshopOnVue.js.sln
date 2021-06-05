@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Core.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Spa.Tests", "EshopOnVue.js.Spa.Tests\EshopOnVue.js.Spa.Tests.csproj", "{921DB987-EECD-4F31-B7E4-C8126BF91672}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solutions Items", "{457A06C7-E111-4C51-9415-CAC69F208D93}"
+	ProjectSection(SolutionItems) = preProject
+		EF.txt = EF.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -3,6 +3,7 @@ using EshopOnVue.js.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace EshopOnVue.js.Infrastructure
 {
@@ -10,7 +11,21 @@ namespace EshopOnVue.js.Infrastructure
     {
         public static void ConfigureServices(IConfiguration configuration, IServiceCollection services)
         {
-            services.AddDbContext<EshopContext>(options => options.UseInMemoryDatabase("Catalog"));
+            var useOnlyInMemoryDatabase = false;
+            if (configuration["UseOnlyInMemoryDatabase"] != null)
+            {
+                useOnlyInMemoryDatabase = bool.Parse(configuration["UseOnlyInMemoryDatabase"]);
+            }
+
+            if (useOnlyInMemoryDatabase)
+            {
+                services.AddDbContext<EshopContext>(options => options.UseInMemoryDatabase("Catalog"));
+            }
+            else
+            {
+                services.AddDbContext<EshopContext>(c =>
+                    c.UseSqlServer(configuration.GetConnectionString("CatalogConnection")));
+            }
 
             services.AddScoped<ICatalogItemsRepository, CatalogItemsRepository>();
         }

@@ -1,0 +1,4 @@
+dotnet ef migrations add Initial --context EshopContext -p ../EshopOnVue.js.Infrastructure/EshopOnVue.js.Infrastructure.csproj -s EshopOnVue.js.Spa.csproj -o Data/Migrations
+
+
+dotnet ef database update --context EshopContext -p ../EshopOnVue.js.Infrastructure/EshopOnVue.js.Infrastructure.csproj -s EshopOnVue.js.Spa.csproj
