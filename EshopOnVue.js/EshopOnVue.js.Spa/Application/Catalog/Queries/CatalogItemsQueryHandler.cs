@@ -20,8 +20,9 @@ namespace EshopOnVue.js.Spa.Application.Catalog.Queries
         {
             var items = new CatalogItemDto[]
             {
-                new CatalogItemDto {Id=1,Name="First",PictureUri="URL2",Price=42},
-                new CatalogItemDto {Id=2,Name="Toto",PictureUri="URL",Price=43}
+                new CatalogItemDto {Id=1,Name="First",PictureUri="static/products/1.png",Price=42},
+                new CatalogItemDto {Id=2,Name="Toto",PictureUri="static/products/2.png",Price=43},
+                new CatalogItemDto {Id=3,Name="Chaussure",PictureUri="static/products/3.png",Price=500}
             };
             await Task.CompletedTask;
             return items;
