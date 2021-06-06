@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solution
 	ProjectSection(SolutionItems) = preProject
 		Docker.txt = Docker.txt
 		EF.txt = EF.txt
+		genereate-client.txt = genereate-client.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Client.SDK", "EshopOnVue.js.Client.SDK\EshopOnVue.js.Client.SDK.csproj", "{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0}"
