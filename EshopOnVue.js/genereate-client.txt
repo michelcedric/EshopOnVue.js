@@ -1,0 +1,6 @@
+!!!!!!!!!!!!!!
+FOR THE MOMENT ONLY USE NSWAGSTUDIO
+
+For the moment it seems nswag cli doesn't support generete client.
+
+But if you use the EshopClient.nswag whith NSwagStudio => Generate Files it's working well
