@@ -38,7 +38,7 @@ namespace EshopOnVue.js.Spa
             services.AddControllers();
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp";
+                configuration.RootPath = "ClientApp/dist";
             });
 
             services.AddSwaggerGen(c =>
@@ -95,7 +95,7 @@ namespace EshopOnVue.js.Spa
                 if (env.IsDevelopment())
                     spa.Options.SourcePath = "ClientApp/";
                 else
-                    spa.Options.SourcePath = "dist";
+                    spa.Options.SourcePath = "ClientApp/dist";
 
                 if (env.IsDevelopment())
                 {

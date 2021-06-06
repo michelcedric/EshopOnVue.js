@@ -17,6 +17,11 @@ COPY . .
 WORKDIR "/src/EshopOnVue.js.Spa"
 RUN dotnet build "EshopOnVue.js.Spa.csproj" -c Release -o /app/build
 
+RUN apt-get update -y
+RUN apt-get install curl gnupg -y
+RUN curl -sL https://deb.nodesource.com/setup_14.x |  bash -
+RUN apt-get install -y nodejs
+
 FROM build AS publish
 RUN dotnet publish "EshopOnVue.js.Spa.csproj" -c Release -o /app/publish
 

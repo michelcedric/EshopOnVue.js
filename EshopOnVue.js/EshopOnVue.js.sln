@@ -7,18 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{66C0DCFF-3D2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Spa", "EshopOnVue.js.Spa\EshopOnVue.js.Spa.csproj", "{1F604CA2-3756-4834-B7FB-774BFC569A81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Infrastructure", "EshopOnVue.js.Infrastructure\EshopOnVue.js.Infrastructure.csproj", "{217005C4-711E-4A07-AC02-7D2096352C17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Infrastructure", "EshopOnVue.js.Infrastructure\EshopOnVue.js.Infrastructure.csproj", "{217005C4-711E-4A07-AC02-7D2096352C17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Core", "EshopOnVue.js.Core\EshopOnVue.js.Core.csproj", "{3E2FB14B-EA01-4DE6-AD19-BEB677916D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Core", "EshopOnVue.js.Core\EshopOnVue.js.Core.csproj", "{3E2FB14B-EA01-4DE6-AD19-BEB677916D48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{981C1FE1-AF11-4E48-A6D0-BC10571DDF33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Core.Tests", "EshopOnVue.js.Core.Tests\EshopOnVue.js.Core.Tests.csproj", "{53F785FA-91E9-4C26-8449-318AAF1B57BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Core.Tests", "EshopOnVue.js.Core.Tests\EshopOnVue.js.Core.Tests.csproj", "{53F785FA-91E9-4C26-8449-318AAF1B57BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Spa.Tests", "EshopOnVue.js.Spa.Tests\EshopOnVue.js.Spa.Tests.csproj", "{921DB987-EECD-4F31-B7E4-C8126BF91672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Spa.Tests", "EshopOnVue.js.Spa.Tests\EshopOnVue.js.Spa.Tests.csproj", "{921DB987-EECD-4F31-B7E4-C8126BF91672}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solutions Items", "{457A06C7-E111-4C51-9415-CAC69F208D93}"
 	ProjectSection(SolutionItems) = preProject
+		Docker.txt = Docker.txt
 		EF.txt = EF.txt
 	EndProjectSection
 EndProject

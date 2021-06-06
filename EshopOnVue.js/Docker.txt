@@ -1,0 +1,7 @@
+open command line on sln folder
+
+docker build -t eshoponwebvuejs -f EshopOnVue.js.Spa/Dockerfile .
+
+docker image ls
+
+docker run -p 9000:80 eshoponwebvuejs

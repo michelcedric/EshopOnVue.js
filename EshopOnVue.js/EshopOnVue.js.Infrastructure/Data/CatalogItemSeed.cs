@@ -1,5 +1,4 @@
 ﻿using EshopOnVue.js.Core.Entities;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +7,7 @@ namespace EshopOnVue.js.Infrastructure.Data
     public class CatalogItemSeed
     {
         public static void Seed(EshopContext context)
-        {          
+        {
             if (!context.CatalogItems.Any())
             {
                 context.CatalogItems.AddRange(
@@ -27,7 +26,7 @@ namespace EshopOnVue.js.Infrastructure.Data
                 CatalogItem.Create("Prism White T-Shirt","Prism White T-Shirt",12,"3.png"),
                 CatalogItem.Create(".NET Foundation Sweatshirt",".NET Foundation Sweatshirt",12,"4.png"),
                 CatalogItem.Create("Roslyn Red Sheet","Roslyn Red Sheet",8.5M,"5.png")
-            
+
             };
         }
     }
