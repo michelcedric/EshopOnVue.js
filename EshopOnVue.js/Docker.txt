@@ -1,7 +1,24 @@
 open command line on sln folder
 
+Create image
 docker build -t eshoponwebvuejs -f EshopOnVue.js.Spa/Dockerfile .
 
+view all image
 docker image ls
 
-docker run -p 9000:80 eshoponwebvuejs
+Create the container and start it
+docker run -p 9000:80 --name eshoponwebvuejs eshoponwebvuejs 
+
+CLEANUP
+
+Stop container
+docker stop eshoponwebvuejs
+
+Remove container
+docker rm eshoponwebvuejs
+
+Remove images
+docker rmi eshoponwebvuejs
+
+check image list
+docker image ls
