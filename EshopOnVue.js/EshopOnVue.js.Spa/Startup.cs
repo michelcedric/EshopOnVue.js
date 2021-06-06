@@ -88,7 +88,15 @@ namespace EshopOnVue.js.Spa
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Eshop on web Api V1");
             });
 
-            CatalogItemSeed.Seed(context);
+            var seedOnStartup = false;
+            if (_configuration["SeedOnStartup"] != null)
+            {
+                seedOnStartup = bool.Parse(_configuration["SeedOnStartup"]);
+            }
+            if (seedOnStartup)
+            {
+                CatalogItemSeed.Seed(context);
+            }
 
             app.UseSpa(spa =>
             {

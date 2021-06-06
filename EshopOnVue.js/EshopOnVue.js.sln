@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solution
 		EF.txt = EF.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Client.SDK", "EshopOnVue.js.Client.SDK\EshopOnVue.js.Client.SDK.csproj", "{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Client.SDK", "EshopOnVue.js.Client.SDK\EshopOnVue.js.Client.SDK.csproj", "{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Spa.IntegrationTests", "EshopOnVue.js.Spa.IntegrationTests\EshopOnVue.js.Spa.IntegrationTests.csproj", "{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{53F785FA-91E9-4C26-8449-318AAF1B57BC} = {981C1FE1-AF11-4E48-A6D0-BC10571DDF33}
 		{921DB987-EECD-4F31-B7E4-C8126BF91672} = {981C1FE1-AF11-4E48-A6D0-BC10571DDF33}
 		{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0} = {66C0DCFF-3D29-4259-AD0E-EBA28AF6C661}
+		{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93} = {981C1FE1-AF11-4E48-A6D0-BC10571DDF33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54C69A19-0A5A-449C-9033-D3C095E24CCA}
