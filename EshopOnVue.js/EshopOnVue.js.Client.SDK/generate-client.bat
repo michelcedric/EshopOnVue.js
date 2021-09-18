@@ -1,1 +1,1 @@
-nswag run EshopClient.nswag /runtime:Net50
+nswag run EshopOnWeb.nswag /runtime:Net50

@@ -21,12 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solution
 	ProjectSection(SolutionItems) = preProject
 		Docker.txt = Docker.txt
 		EF.txt = EF.txt
-		genereate-client.txt = genereate-client.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Client.SDK", "EshopOnVue.js.Client.SDK\EshopOnVue.js.Client.SDK.csproj", "{A0212FC5-6EB9-4FDD-A4D5-989D73DF38A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopOnVue.js.Spa.IntegrationTests", "EshopOnVue.js.Spa.IntegrationTests\EshopOnVue.js.Spa.IntegrationTests.csproj", "{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Spa.IntegrationTests", "EshopOnVue.js.Spa.IntegrationTests\EshopOnVue.js.Spa.IntegrationTests.csproj", "{684ABB95-FC5E-4BFA-BE2A-18C6B0EC1A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
