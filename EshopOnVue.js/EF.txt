@@ -1,3 +1,7 @@
+#Update or install the tool before
+dotnet tool update --global dotnet-ef
+
+
 dotnet ef migrations add Initial --context EshopContext -p ../EshopOnVue.js.Infrastructure/EshopOnVue.js.Infrastructure.csproj -s EshopOnVue.js.Spa.csproj -o Data/Migrations
 
 
