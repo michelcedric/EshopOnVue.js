@@ -1,16 +1,22 @@
 using EshopOnVue.js.Infrastructure.Data;
 using MediatR;
+using MinimalApi.Extensions;
 using System.Reflection;
 using VueCliMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddEndpoints();
 builder.Services.AddControllers();
+
 builder.Services.AddSpaStaticFiles(configuration =>
 {
     configuration.RootPath = "ClientApp/dist";
 });
 
+builder.Services.AddAuthorization();
+
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -47,7 +53,6 @@ app.UseEndpoints(endpoints =>
 });
 
 app.UseSwagger();
-
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Eshop on web Api V1");
@@ -80,6 +85,8 @@ app.UseSpa(spa =>
     }
 
 });
+
+app.MapEndpoints();
 
 app.Run();
 

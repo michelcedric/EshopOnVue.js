@@ -31,44 +31,40 @@
         </member>
         <member name="T:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler">
             <summary>
-            
+            Handler to respond on the CatalogItemsQueryRequest
             </summary>
         </member>
         <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler.#ctor(EshopOnVue.js.Core.Interfaces.Repositories.ICatalogItemsRepository)">
             <summary>
-            
+            Default contructor
             </summary>
             <param name="catalogItemsRepository"></param>
         </member>
         <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler.Handle(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest,System.Threading.CancellationToken)">
             <summary>
-            
+            Get specific CatalogItemDto corresponding to the request
             </summary>
             <param name="request"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="T:EshopOnVue.js.Spa.Controllers.CatalogController">
-            <summary>
-            Controller to manage the catalog of product
-            </summary>
-        </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogController.#ctor(MediatR.IMediator)">
+        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogEndpoint.#ctor(MediatR.IMediator)">
             <summary>
             Default constructor
             </summary>
             <param name="mediator"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogController.List(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
+        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogEndpoint.Handle(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
             <summary>
             Get all catalog items available
-            </summary>  
+            </summary>
+            <param name="request"></param>
             <returns></returns>
         </member>
         <member name="T:EshopOnVue.js.Spa.Controllers.WeatherForecastController">
             <summary>
             Endp point to manage WeatherForecast
-            </summary>
+            </summary>  
         </member>
         <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{EshopOnVue.js.Spa.Controllers.WeatherForecastController})">
             <summary>
@@ -76,7 +72,7 @@
             </summary>
             <param name="logger"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastController.Get">
+        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastController.Handle">
             <summary>
             Get all WeatherForecast available
             </summary>

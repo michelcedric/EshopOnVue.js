@@ -46,6 +46,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EshopOnVue.js.Infrastructure\EshopOnVue.js.Infrastructure.csproj" />
+    <ProjectReference Include="..\MinimalApi\MinimalApi.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

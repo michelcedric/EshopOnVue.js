@@ -1,21 +1,17 @@
 ﻿using EshopOnVue.js.Core.Interfaces.Repositories;
 using MediatR;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace EshopOnVue.js.Spa.Application.Catalog.Queries
 {
     /// <summary>
-    /// 
+    /// Handler to respond on the CatalogItemsQueryRequest
     /// </summary>
     public class CatalogItemsQueryHandler : IRequestHandler<CatalogItemsQueryRequest, IEnumerable<CatalogItemDto>>
     {
         private readonly ICatalogItemsRepository _catalogItemsRepository;
 
         /// <summary>
-        /// 
+        /// Default contructor
         /// </summary>
         /// <param name="catalogItemsRepository"></param>
         public CatalogItemsQueryHandler(ICatalogItemsRepository catalogItemsRepository)
@@ -24,7 +20,7 @@ namespace EshopOnVue.js.Spa.Application.Catalog.Queries
         }
 
         /// <summary>
-        /// 
+        /// Get specific CatalogItemDto corresponding to the request
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>

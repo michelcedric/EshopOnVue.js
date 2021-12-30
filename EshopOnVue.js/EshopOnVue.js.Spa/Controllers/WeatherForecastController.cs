@@ -1,17 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MinimalApi;
 
 namespace EshopOnVue.js.Spa.Controllers
 {
     /// <summary>
     /// Endp point to manage WeatherForecast
-    /// </summary>
-    [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    /// </summary>  
+    public class WeatherForecastController : IEndpoint<IResult>
     {
         private static readonly string[] Summaries = new[]
         {
@@ -29,22 +23,27 @@ namespace EshopOnVue.js.Spa.Controllers
             _logger = logger;
         }
 
+        public void AddRoute(IEndpointRouteBuilder app)
+        {
+            app.MapGet("WeatherForecast", Handle)
+                .Produces<IEnumerable<WeatherForecast>>(StatusCodes.Status200OK);
+        }
 
         /// <summary>
         /// Get all WeatherForecast available
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public Task<IResult> Handle()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var values = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            }).ToArray();
+
+            return Task.FromResult(Results.Ok(values));
         }
     }
 }
