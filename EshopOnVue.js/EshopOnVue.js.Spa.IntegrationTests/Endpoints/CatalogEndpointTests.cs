@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace EshopOnVue.js.Spa.IntegrationTests.Controllers
 {
     [TestClass]
-    public class CatalogControllerTests : ControllerTestBase
+    public class CatalogEndpointTests : EndpointTestBase
     {
         [TestMethod]
         public async Task List_WhenNoFilter_ThenReturnCorrectItem()

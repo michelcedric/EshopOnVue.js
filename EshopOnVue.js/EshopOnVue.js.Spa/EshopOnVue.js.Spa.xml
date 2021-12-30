@@ -61,22 +61,28 @@
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="T:EshopOnVue.js.Spa.Controllers.WeatherForecastController">
+        <member name="T:EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint">
             <summary>
             Endp point to manage WeatherForecast
             </summary>  
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{EshopOnVue.js.Spa.Controllers.WeatherForecastController})">
+        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint.#ctor(Microsoft.Extensions.Logging.ILogger{EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint})">
             <summary>
             Default constructor
             </summary>
             <param name="logger"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastController.Handle">
+        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint.Handle">
             <summary>
             Get all WeatherForecast available
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Program.AddConfigurationFile(Microsoft.Extensions.Configuration.ConfigurationManager)">
+            <summary>
+            Add config file usefull to load specific settings in integration tests
+            </summary>
+            <param name="configurationManager"></param>
         </member>
     </members>
 </doc>

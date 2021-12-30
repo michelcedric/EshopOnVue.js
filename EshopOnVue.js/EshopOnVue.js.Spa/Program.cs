@@ -31,12 +31,13 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 
+
+Program.AddConfigurationFile(builder.Configuration);
 EshopOnVue.js.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
 builder.Services.AddMediatR(typeof(Program));
 
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
@@ -90,4 +91,15 @@ app.MapEndpoints();
 
 app.Run();
 
-public partial class Program { }
+public partial class Program
+{
+    /// <summary>
+    /// Add config file usefull to load specific settings in integration tests
+    /// </summary>
+    /// <param name="configurationManager"></param>
+    public static void AddConfigurationFile(ConfigurationManager configurationManager)
+    {
+        var configPath = Path.Combine(AppContext.BaseDirectory, "appsettings.int.json");
+        configurationManager.AddJsonFile(configPath, true, false);
+    }
+}
