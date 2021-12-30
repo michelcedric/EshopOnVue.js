@@ -48,31 +48,31 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogEndpoint.#ctor(MediatR.IMediator)">
+        <member name="M:EshopOnVue.js.Spa.Controllers.FilterCatalogEndpoint.#ctor(MediatR.IMediator)">
             <summary>
             Default constructor
             </summary>
             <param name="mediator"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.CatalogEndpoint.Handle(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
+        <member name="M:EshopOnVue.js.Spa.Controllers.FilterCatalogEndpoint.Handle(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
             <summary>
             Get all catalog items available
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="T:EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint">
+        <member name="T:EshopOnVue.js.Spa.Controllers.GetAllWeatherForecastEndpoint">
             <summary>
             Endp point to manage WeatherForecast
             </summary>  
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint.#ctor(Microsoft.Extensions.Logging.ILogger{EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint})">
+        <member name="M:EshopOnVue.js.Spa.Controllers.GetAllWeatherForecastEndpoint.#ctor(Microsoft.Extensions.Logging.ILogger{EshopOnVue.js.Spa.Controllers.GetAllWeatherForecastEndpoint})">
             <summary>
             Default constructor
             </summary>
             <param name="logger"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.WeatherForecastEndpoint.Handle">
+        <member name="M:EshopOnVue.js.Spa.Controllers.GetAllWeatherForecastEndpoint.Handle">
             <summary>
             Get all WeatherForecast available
             </summary>

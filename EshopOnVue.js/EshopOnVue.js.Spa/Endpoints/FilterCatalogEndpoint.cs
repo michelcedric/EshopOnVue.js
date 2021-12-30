@@ -5,7 +5,7 @@ using MinimalApi;
 namespace EshopOnVue.js.Spa.Controllers
 {
 
-    public class CatalogEndpoint : IEndpoint<IResult, CatalogItemsQueryRequest>
+    public class FilterCatalogEndpoint : IEndpoint<IResult, CatalogItemsQueryRequest>
     {
         private readonly IMediator _mediator;
 
@@ -13,7 +13,7 @@ namespace EshopOnVue.js.Spa.Controllers
         /// Default constructor
         /// </summary>
         /// <param name="mediator"></param>
-        public CatalogEndpoint(IMediator mediator)
+        public FilterCatalogEndpoint(IMediator mediator)
         {
             _mediator = mediator;
         }

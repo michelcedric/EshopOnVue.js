@@ -17,9 +17,9 @@ builder.Services.AddSpaStaticFiles(configuration =>
 builder.Services.AddAuthorization();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddSwaggerGen(options =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Title = "Eshop on web",
         Version = "v1"
@@ -28,7 +28,13 @@ builder.Services.AddSwaggerGen(c =>
     // Set the comments path for the Swagger JSON and UI.
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    c.IncludeXmlComments(xmlPath);
+    options.IncludeXmlComments(xmlPath);
+
+    options.CustomOperationIds(apiDesc =>
+    {
+        apiDesc.ActionDescriptor.RouteValues.TryGetValue("Controller", out var value);
+        return value.Replace("Endpoint", "");
+    });
 });
 
 

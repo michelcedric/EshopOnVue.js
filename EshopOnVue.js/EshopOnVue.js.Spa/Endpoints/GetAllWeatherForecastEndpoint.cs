@@ -5,20 +5,20 @@ namespace EshopOnVue.js.Spa.Controllers
     /// <summary>
     /// Endp point to manage WeatherForecast
     /// </summary>  
-    public class WeatherForecastEndpoint : IEndpoint<IResult>
+    public class GetAllWeatherForecastEndpoint : IEndpoint<IResult>
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastEndpoint> _logger;
+        private readonly ILogger<GetAllWeatherForecastEndpoint> _logger;
 
         /// <summary>
         /// Default constructor
         /// </summary>
         /// <param name="logger"></param>
-        public WeatherForecastEndpoint(ILogger<WeatherForecastEndpoint> logger)
+        public GetAllWeatherForecastEndpoint(ILogger<GetAllWeatherForecastEndpoint> logger)
         {
             _logger = logger;
         }
