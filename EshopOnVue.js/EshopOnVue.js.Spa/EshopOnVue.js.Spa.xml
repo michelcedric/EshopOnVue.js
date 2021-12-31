@@ -78,11 +78,5 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Program.AddConfigurationFile(Microsoft.Extensions.Configuration.ConfigurationManager)">
-            <summary>
-            Add config file usefull to load specific settings in integration tests
-            </summary>
-            <param name="configurationManager"></param>
-        </member>
     </members>
 </doc>

@@ -1,4 +1,4 @@
-﻿using MinimalApi;
+﻿using MinimalApi.Endpoint;
 
 namespace EshopOnVue.js.Spa.Controllers
 {

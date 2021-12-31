@@ -1,6 +1,6 @@
 ﻿using EshopOnVue.js.Spa.Application.Catalog.Queries;
 using MediatR;
-using MinimalApi;
+using MinimalApi.Endpoint;
 
 namespace EshopOnVue.js.Spa.Controllers
 {

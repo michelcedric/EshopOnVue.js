@@ -1,11 +1,14 @@
 using EshopOnVue.js.Infrastructure.Data;
 using MediatR;
-using MinimalApi.Extensions;
+using MinimalApi.Endpoint.Configurations.Extensions;
+using MinimalApi.Endpoint.Extensions;
+using MinimalApi.Endpoint.SwaggerGen.Extensions;
 using System.Reflection;
 using VueCliMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddConfigurationFile("appsettings.int.json");
 builder.Services.AddEndpoints();
 builder.Services.AddControllers();
 
@@ -30,15 +33,9 @@ builder.Services.AddSwaggerGen(options =>
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     options.IncludeXmlComments(xmlPath);
 
-    options.CustomOperationIds(apiDesc =>
-    {
-        apiDesc.ActionDescriptor.RouteValues.TryGetValue("Controller", out var value);
-        return value.Replace("Endpoint", "");
-    });
+    options.CustomEndpointOperationIds();
 });
 
-
-Program.AddConfigurationFile(builder.Configuration);
 EshopOnVue.js.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
 builder.Services.AddMediatR(typeof(Program));
@@ -97,15 +94,4 @@ app.MapEndpoints();
 
 app.Run();
 
-public partial class Program
-{
-    /// <summary>
-    /// Add config file usefull to load specific settings in integration tests
-    /// </summary>
-    /// <param name="configurationManager"></param>
-    public static void AddConfigurationFile(ConfigurationManager configurationManager)
-    {
-        var configPath = Path.Combine(AppContext.BaseDirectory, "appsettings.int.json");
-        configurationManager.AddJsonFile(configPath, true, false);
-    }
-}
+public partial class Program { }
