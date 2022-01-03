@@ -21,7 +21,7 @@ namespace EshopOnVue.js.Spa.Controllers
         public void AddRoute(IEndpointRouteBuilder app)
         {
             app.MapGet("api/Catalog", async (int? pageSize, int? page)
-                => await Handle(new CatalogItemsQueryRequest(pageSize, page)))
+                => await HandleAsync(new CatalogItemsQueryRequest(pageSize, page)))
                 .Produces<IEnumerable<CatalogItemDto>>(StatusCodes.Status200OK);
         }
 
@@ -30,7 +30,7 @@ namespace EshopOnVue.js.Spa.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public async Task<IResult> Handle(CatalogItemsQueryRequest request)
+        public async Task<IResult> HandleAsync(CatalogItemsQueryRequest request)
         {
             var result = await _mediator.Send(request);
             return Results.Ok(result);

@@ -25,7 +25,7 @@ namespace EshopOnVue.js.Spa.Controllers
 
         public void AddRoute(IEndpointRouteBuilder app)
         {
-            app.MapGet("WeatherForecast", Handle)
+            app.MapGet("WeatherForecast", HandleAsync)
                 .Produces<IEnumerable<WeatherForecast>>(StatusCodes.Status200OK);
         }
 
@@ -33,7 +33,7 @@ namespace EshopOnVue.js.Spa.Controllers
         /// Get all WeatherForecast available
         /// </summary>
         /// <returns></returns>
-        public Task<IResult> Handle()
+        public Task<IResult> HandleAsync()
         {
             var rng = new Random();
             var values = Enumerable.Range(1, 5).Select(index => new WeatherForecast

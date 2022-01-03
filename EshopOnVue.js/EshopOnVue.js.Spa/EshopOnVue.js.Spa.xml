@@ -54,7 +54,7 @@
             </summary>
             <param name="mediator"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.FilterCatalogEndpoint.Handle(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
+        <member name="M:EshopOnVue.js.Spa.Controllers.FilterCatalogEndpoint.HandleAsync(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
             <summary>
             Get all catalog items available
             </summary>
@@ -72,7 +72,7 @@
             </summary>
             <param name="logger"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.GetAllWeatherForecastEndpoint.Handle">
+        <member name="M:EshopOnVue.js.Spa.Controllers.GetAllWeatherForecastEndpoint.HandleAsync">
             <summary>
             Get all WeatherForecast available
             </summary>
