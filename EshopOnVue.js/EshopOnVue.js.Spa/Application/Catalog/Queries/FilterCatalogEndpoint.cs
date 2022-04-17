@@ -1,10 +1,12 @@
-﻿using EshopOnVue.js.Spa.Application.Catalog.Queries;
-using MediatR;
+﻿using MediatR;
 using MinimalApi.Endpoint;
 
-namespace EshopOnVue.js.Spa.Controllers
+namespace EshopOnVue.js.Spa.Application.Catalog.Queries
 {
 
+    /// <summary>
+    /// Endpoint to get CatalogItem
+    /// </summary>
     public class FilterCatalogEndpoint : IEndpoint<IResult, CatalogItemsQueryRequest>
     {
         private readonly IMediator _mediator;
@@ -18,6 +20,10 @@ namespace EshopOnVue.js.Spa.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Define routing of the endpoint
+        /// </summary>
+        /// <param name="app"></param>
         public void AddRoute(IEndpointRouteBuilder app)
         {
             app.MapGet("api/Catalog", async (int? pageSize, int? page)

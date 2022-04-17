@@ -48,13 +48,13 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.FilterCatalogEndpoint.#ctor(MediatR.IMediator)">
+        <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.FilterCatalogEndpoint.#ctor(MediatR.IMediator)">
             <summary>
             Default constructor
             </summary>
             <param name="mediator"></param>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Controllers.FilterCatalogEndpoint.HandleAsync(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
+        <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.FilterCatalogEndpoint.HandleAsync(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
             <summary>
             Get all catalog items available
             </summary>
