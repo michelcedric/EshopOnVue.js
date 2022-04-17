@@ -48,11 +48,22 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
+        <member name="T:EshopOnVue.js.Spa.Application.Catalog.Queries.FilterCatalogEndpoint">
+            <summary>
+            Endpoint to get CatalogItem
+            </summary>
+        </member>
         <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.FilterCatalogEndpoint.#ctor(MediatR.IMediator)">
             <summary>
             Default constructor
             </summary>
             <param name="mediator"></param>
+        </member>
+        <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.FilterCatalogEndpoint.AddRoute(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+            Define routing of the endpoint
+            </summary>
+            <param name="app"></param>
         </member>
         <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.FilterCatalogEndpoint.HandleAsync(EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryRequest)">
             <summary>
