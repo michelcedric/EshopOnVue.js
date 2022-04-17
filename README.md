@@ -11,9 +11,7 @@
 
 1. Open a command prompt in the Web folder and execute the following commands:
 
-    ```
-    dotnet restore
-    dotnet tool restore
+    ``` 
     dotnet ef database update --context EshopContext -p EshopOnVue.js.Infrastructure/EshopOnVue.js.Infrastructure.csproj -s EshopOnVue.js.Spa/EshopOnVue.js.Spa.csproj
   
     ```

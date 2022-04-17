@@ -14,7 +14,7 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BuyerId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    BuyerId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,23 +29,23 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                     UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     CatalogItemId = table.Column<int>(type: "int", nullable: false),
-                    BasketId = table.Column<int>(type: "int", nullable: false),
-                    BasketId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    BasketId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BasketItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BasketItems_Baskets_BasketId1",
-                        column: x => x.BasketId1,
+                        name: "FK_BasketItems_Baskets_BasketId",
+                        column: x => x.BasketId,
                         principalTable: "Baskets",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BasketItems_BasketId1",
+                name: "IX_BasketItems_BasketId",
                 table: "BasketItems",
-                column: "BasketId1");
+                column: "BasketId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

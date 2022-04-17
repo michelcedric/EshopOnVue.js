@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace EshopOnVue.js.Core.Entities
@@ -8,9 +9,10 @@ namespace EshopOnVue.js.Core.Entities
     {
         private readonly List<BasketItem> _items;
 
-        public string BuyerId { get; private set; }
+        [Required]
+        public virtual string BuyerId { get; private set; }
 
-        public IReadOnlyCollection<BasketItem> Items { get => _items.ToList(); }
+        public virtual IReadOnlyCollection<BasketItem> Items { get => _items.ToList(); }
         public int TotalItems => Items.Sum(i => i.Quantity);
 
         public Basket(string buyerId)
@@ -19,7 +21,7 @@ namespace EshopOnVue.js.Core.Entities
             _items = new List<BasketItem>();
         }
 
-        public void AddItem(int catalogItemId, decimal unitPrice, int quantity = 1)
+        public void AddItem(Guid catalogItemId, decimal unitPrice, int quantity = 1)
         {
             if (!Items.Any(i => i.CatalogItemId == catalogItemId))
             {

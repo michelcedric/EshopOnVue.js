@@ -1,16 +1,18 @@
 ﻿using Ardalis.GuardClauses;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EshopOnVue.js.Core.Entities
 {
     public class BasketItem : BaseEntity<Guid>
     {
+        [Column(TypeName = "decimal(18,2)")]
         public decimal UnitPrice { get; private set; }
         public int Quantity { get; private set; }
-        public int CatalogItemId { get; private set; }
-        public int BasketId { get; private set; }
+        public Guid CatalogItemId { get; private set; }
+        public Guid BasketId { get; private set; }
 
-        public BasketItem(int catalogItemId, int quantity, decimal unitPrice)
+        public BasketItem(Guid catalogItemId, int quantity, decimal unitPrice)
         {
             CatalogItemId = catalogItemId;
             UnitPrice = unitPrice;

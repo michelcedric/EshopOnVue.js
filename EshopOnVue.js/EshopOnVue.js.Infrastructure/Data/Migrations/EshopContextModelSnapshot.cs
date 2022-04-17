@@ -29,6 +29,7 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BuyerId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -42,10 +43,7 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BasketId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("BasketId1")
+                    b.Property<Guid>("BasketId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("CatalogItemId")
@@ -59,7 +57,7 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BasketId1");
+                    b.HasIndex("BasketId");
 
                     b.ToTable("BasketItems");
                 });
@@ -71,12 +69,15 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PictureImageName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -91,7 +92,9 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                 {
                     b.HasOne("EshopOnVue.js.Core.Entities.Basket", null)
                         .WithMany("Items")
-                        .HasForeignKey("BasketId1");
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EshopOnVue.js.Core.Entities.Basket", b =>
