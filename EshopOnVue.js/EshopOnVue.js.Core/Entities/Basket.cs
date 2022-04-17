@@ -17,6 +17,7 @@ namespace EshopOnVue.js.Core.Entities
 
         public Basket(string buyerId)
         {
+            Id = Guid.NewGuid();
             BuyerId = buyerId;
             _items = new List<BasketItem>();
         }

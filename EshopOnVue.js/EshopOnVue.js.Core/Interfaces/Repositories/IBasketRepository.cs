@@ -3,7 +3,7 @@ using System;
 
 namespace EshopOnVue.js.Core.Interfaces.Repositories
 {
-    public interface ICatalogItemsRepository : IAsyncRepository<CatalogItem, Guid>
+    public interface IBasketRepository : IAsyncRepository<Basket, Guid>
     {
     }
 }

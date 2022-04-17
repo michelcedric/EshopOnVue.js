@@ -34,7 +34,7 @@
             Handler to respond on the CatalogItemsQueryRequest
             </summary>
         </member>
-        <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler.#ctor(EshopOnVue.js.Core.Interfaces.Repositories.ICatalogItemsRepository)">
+        <member name="M:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemsQueryHandler.#ctor(EshopOnVue.js.Core.Interfaces.Repositories.ICatalogItemRepository)">
             <summary>
             Default contructor
             </summary>

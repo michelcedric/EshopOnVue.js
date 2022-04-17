@@ -14,6 +14,7 @@ namespace EshopOnVue.js.Core.Entities
 
         public BasketItem(Guid catalogItemId, int quantity, decimal unitPrice)
         {
+            Id = Guid.NewGuid();
             CatalogItemId = catalogItemId;
             UnitPrice = unitPrice;
             SetQuantity(quantity);

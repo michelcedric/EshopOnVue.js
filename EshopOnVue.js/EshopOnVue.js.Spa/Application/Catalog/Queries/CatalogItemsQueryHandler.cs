@@ -8,13 +8,13 @@ namespace EshopOnVue.js.Spa.Application.Catalog.Queries
     /// </summary>
     public class CatalogItemsQueryHandler : IRequestHandler<CatalogItemsQueryRequest, IEnumerable<CatalogItemDto>>
     {
-        private readonly ICatalogItemsRepository _catalogItemsRepository;
+        private readonly ICatalogItemRepository _catalogItemsRepository;
 
         /// <summary>
         /// Default contructor
         /// </summary>
         /// <param name="catalogItemsRepository"></param>
-        public CatalogItemsQueryHandler(ICatalogItemsRepository catalogItemsRepository)
+        public CatalogItemsQueryHandler(ICatalogItemRepository catalogItemsRepository)
         {
             _catalogItemsRepository = catalogItemsRepository;
         }

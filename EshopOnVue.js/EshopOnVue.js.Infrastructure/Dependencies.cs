@@ -26,7 +26,7 @@ namespace EshopOnVue.js.Infrastructure
                     c.UseSqlServer(configuration.GetConnectionString("CatalogConnection")));
             }
 
-            services.AddScoped<ICatalogItemsRepository, CatalogItemsRepository>();
+            services.AddScoped<ICatalogItemRepository, CatalogItemsRepository>();
         }
     }
 }

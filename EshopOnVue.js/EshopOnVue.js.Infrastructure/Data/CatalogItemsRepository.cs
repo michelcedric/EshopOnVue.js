@@ -4,7 +4,7 @@ using System;
 
 namespace EshopOnVue.js.Infrastructure.Data
 {
-    public class CatalogItemsRepository : EfRepository<CatalogItem, Guid, EshopContext>, ICatalogItemsRepository
+    public class CatalogItemsRepository : EfRepository<CatalogItem, Guid, EshopContext>, ICatalogItemRepository
     {
         public CatalogItemsRepository(EshopContext dbContext) : base(dbContext)
         {
