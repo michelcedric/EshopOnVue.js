@@ -1,0 +1,34 @@
+﻿using EshopOnVue.js.Core.Interfaces.Repositories;
+using MediatR;
+
+namespace EshopOnVue.js.Spa.Application.Basket.Commands
+{
+    public class AddBasketItemCommandHandler : IRequestHandler<AddBasketItemCommand>
+    {
+        private readonly IBasketRepository _basketRepository;
+        private readonly ICatalogItemRepository _catalogItemRepository;
+
+        public AddBasketItemCommandHandler(IBasketRepository basketRepository, ICatalogItemRepository catalogItemRepository)
+        {
+            _basketRepository = basketRepository;
+            _catalogItemRepository = catalogItemRepository;
+        }
+
+        public async Task<Unit> Handle(AddBasketItemCommand request, CancellationToken cancellationToken)
+        {
+            var basket = await _basketRepository.GetBasketWithItems(request.BuyerId);
+            if (basket == null)
+            {
+                basket = new Core.Entities.Basket(request.BuyerId);
+            }
+
+            var catalogItemPrice = await _catalogItemRepository.GetPrice(request.CatalogItemId);
+
+            basket.AddItem(request.CatalogItemId, catalogItemPrice, 1);
+
+            await _basketRepository.UpdateAsync(basket);
+
+            return Unit.Value;
+        }
+    }
+}

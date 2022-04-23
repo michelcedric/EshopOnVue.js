@@ -46,8 +46,8 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                     b.Property<Guid>("BasketId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CatalogItemId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CatalogItemId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");

@@ -15,5 +15,6 @@ namespace EshopOnVue.js.Infrastructure.Data
         public DbSet<Basket> Baskets { get; set; }
 
         public DbSet<BasketItem> BasketItems { get; set; }
+
     }
 }

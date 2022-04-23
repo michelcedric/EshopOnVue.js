@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EshopOnVue.js.Infrastructure.Data.Migrations
 {
-    public partial class Basket : Migration
+    public partial class BasketMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +28,7 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    CatalogItemId = table.Column<int>(type: "int", nullable: false),
+                    CatalogItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BasketId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>

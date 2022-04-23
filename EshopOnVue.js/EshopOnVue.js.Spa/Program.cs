@@ -9,6 +9,7 @@ using VueCliMiddleware;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddConfigurationFile("appsettings.int.json");
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpoints();
 builder.Services.AddControllers();
 

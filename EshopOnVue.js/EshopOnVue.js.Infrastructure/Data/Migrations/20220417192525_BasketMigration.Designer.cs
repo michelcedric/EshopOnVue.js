@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EshopOnVue.js.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(EshopContext))]
-    [Migration("20220417174045_Basket")]
-    partial class Basket
+    [Migration("20220417192525_BasketMigration")]
+    partial class BasketMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,8 +48,8 @@ namespace EshopOnVue.js.Infrastructure.Data.Migrations
                     b.Property<Guid>("BasketId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CatalogItemId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CatalogItemId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");

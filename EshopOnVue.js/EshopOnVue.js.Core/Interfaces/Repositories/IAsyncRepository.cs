@@ -17,5 +17,6 @@ namespace EshopOnVue.js.Core.Interfaces.Repositories
         Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
         Task DeleteAsync(TEntity entity, CancellationToken cancellationToken = default);
         Task<IEnumerable<TEntity>> FindByAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
+        Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
     }
 }

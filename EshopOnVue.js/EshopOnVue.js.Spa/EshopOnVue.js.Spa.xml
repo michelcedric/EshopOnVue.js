@@ -4,6 +4,31 @@
         <name>EshopOnVue.js.Spa</name>
     </assembly>
     <members>
+        <member name="T:EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemEndpoint">
+            <summary>
+            Endpoint to get CatalogItem
+            </summary>
+        </member>
+        <member name="M:EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemEndpoint.#ctor(MediatR.IMediator,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="mediator"></param>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="M:EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemEndpoint.AddRoute(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+            Define routing of the endpoint
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemEndpoint.HandleAsync(EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemCommand)">
+            <summary>
+            Get all catalog items available
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="T:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemDto">
             <summary>
             Represent an element form the catalog

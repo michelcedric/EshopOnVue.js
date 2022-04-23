@@ -27,6 +27,7 @@ namespace EshopOnVue.js.Infrastructure
             }
 
             services.AddScoped<ICatalogItemRepository, CatalogItemsRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
         }
     }
 }

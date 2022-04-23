@@ -14,10 +14,12 @@ namespace EshopOnVue.js.Infrastructure.Data
          IAsyncRepository<TEntity, TKey> where TEntity : BaseEntity<TKey>
          where TDbContext : DbContext
     {
-        protected readonly TDbContext _dbContext;
+        protected readonly DbSet<TEntity> _dbSet;
+        private readonly TDbContext _dbContext;
 
         protected EfRepository(TDbContext dbContext)
         {
+            _dbSet = dbContext.Set<TEntity>();
             _dbContext = dbContext;
         }
 
@@ -27,22 +29,27 @@ namespace EshopOnVue.js.Infrastructure.Data
             {
                 id
             };
-            return await _dbContext.Set<TEntity>().FindAsync(values, cancellationToken: cancellationToken);
+            return await _dbSet.FindAsync(values, cancellationToken: cancellationToken);
         }
 
         public async Task<IEnumerable<TEntity>> FindByAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
         {
-            return await _dbContext.Set<TEntity>().Where(predicate).ToListAsync(cancellationToken);
+            return await _dbSet.Where(predicate).ToListAsync(cancellationToken);
+        }
+
+        public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return await _dbSet.FirstOrDefaultAsync(predicate, cancellationToken);
         }
 
         public virtual async Task<IReadOnlyList<TEntity>> ListAllAsync(CancellationToken cancellationToken = default)
         {
-            return await _dbContext.Set<TEntity>().ToListAsync(cancellationToken);
+            return await _dbSet.ToListAsync(cancellationToken);
         }
 
         public async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
-            await _dbContext.Set<TEntity>().AddAsync(entity, cancellationToken);
+            await _dbSet.AddAsync(entity, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return entity;
 
@@ -50,20 +57,29 @@ namespace EshopOnVue.js.Infrastructure.Data
 
         public async Task<IEnumerable<TEntity>> AddAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
         {
-            await _dbContext.Set<TEntity>().AddRangeAsync(entities, cancellationToken);
+
+            await _dbSet.AddRangeAsync(entities, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return entities;
         }
 
         public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
+            var currentEntityState = _dbContext.Entry(entity).State;
+            if (currentEntityState == EntityState.Detached || currentEntityState == EntityState.Added)
+            {
+                await _dbSet.AddAsync(entity, cancellationToken);
+            }
+            else
+            {
+                _dbContext.Set<TEntity>().Update(entity);
+            }
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
         public async Task DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
-            _dbContext.Set<TEntity>().Remove(entity);
+            _dbSet.Remove(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
