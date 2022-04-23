@@ -28,7 +28,7 @@ namespace EshopOnVue.js.Spa.Application.Basket.Commands
 
             basket.AddItem(request.CatalogItemId, catalogItemPrice.Value, 1);
 
-            await _basketRepository.UpdateAsync(basket);
+            await _basketRepository.UpdateAsync(basket, cancellationToken);
 
             return Unit.Value;
         }

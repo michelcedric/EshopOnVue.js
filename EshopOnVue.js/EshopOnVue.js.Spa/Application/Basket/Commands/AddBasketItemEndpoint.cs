@@ -51,7 +51,7 @@ namespace EshopOnVue.js.Spa.Application.Basket.Commands
 
         private string GetOrCreateBuyerId()
         {
-            string? buyerId;
+            string? buyerId = null;
 
             if (_httpContextAccessor.HttpContext == null) throw new NullReferenceException("The http context is not defined");
 
@@ -59,7 +59,8 @@ namespace EshopOnVue.js.Spa.Application.Basket.Commands
             {
                 buyerId = _httpContextAccessor.HttpContext.Request.Cookies[Constants.BASKET_COOKIENAME];
             }
-            else
+
+            if (string.IsNullOrEmpty(buyerId))
             {
                 buyerId = Guid.NewGuid().ToString();
             }
