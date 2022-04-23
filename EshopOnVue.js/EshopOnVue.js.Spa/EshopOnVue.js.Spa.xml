@@ -6,7 +6,7 @@
     <members>
         <member name="T:EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemEndpoint">
             <summary>
-            Endpoint to get CatalogItem
+            Endpoint to add an item in a basket
             </summary>
         </member>
         <member name="M:EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemEndpoint.#ctor(MediatR.IMediator,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
@@ -24,9 +24,10 @@
         </member>
         <member name="M:EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemEndpoint.HandleAsync(EshopOnVue.js.Spa.Application.Basket.Commands.AddBasketItemCommand)">
             <summary>
-            Get all catalog items available
+            Handler to add basket item
+            The link to the buyer is manage with a cookie
             </summary>
-            <param name="request"></param>
+            <param name="addBasketItemCommand"></param>      
             <returns></returns>
         </member>
         <member name="T:EshopOnVue.js.Spa.Application.Catalog.Queries.CatalogItemDto">

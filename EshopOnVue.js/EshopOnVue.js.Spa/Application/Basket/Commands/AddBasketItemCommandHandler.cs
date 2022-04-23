@@ -24,7 +24,9 @@ namespace EshopOnVue.js.Spa.Application.Basket.Commands
 
             var catalogItemPrice = await _catalogItemRepository.GetPrice(request.CatalogItemId);
 
-            basket.AddItem(request.CatalogItemId, catalogItemPrice, 1);
+            if (catalogItemPrice == null) throw new Exception($"Not price found for catalog item {request.CatalogItemId}");
+
+            basket.AddItem(request.CatalogItemId, catalogItemPrice.Value, 1);
 
             await _basketRepository.UpdateAsync(basket);
 

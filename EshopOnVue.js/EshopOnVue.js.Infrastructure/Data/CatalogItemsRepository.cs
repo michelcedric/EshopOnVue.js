@@ -13,9 +13,24 @@ namespace EshopOnVue.js.Infrastructure.Data
         {
         }
 
-        public async Task<decimal> GetPrice(Guid catalogItemId)
+        /// <summary>
+        /// <see cref="ICatalogItemRepository.GetPrice(Guid)"/>
+        /// </summary>
+        /// <param name="catalogItemId"></param>
+        /// <returns></returns>
+        public async Task<decimal?> GetPrice(Guid catalogItemId)
         {
-            return await _dbSet.Where(c => c.Id == catalogItemId).Select(s => s.Price).FirstOrDefaultAsync();
+            try
+            {
+                var price = await _dbSet.Where(c => c.Id == catalogItemId)
+                    .Select(s => s.Price).FirstAsync();
+
+                return price;
+            }
+            catch (InvalidOperationException)
+            {
+                return null;
+            }
         }
     }
 }
