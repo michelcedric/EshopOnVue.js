@@ -2,7 +2,9 @@
 using EshopOnVue.js.Core.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace EshopOnVue.js.Infrastructure.Data
@@ -11,6 +13,13 @@ namespace EshopOnVue.js.Infrastructure.Data
     {
         public CatalogItemsRepository(EshopContext dbContext) : base(dbContext)
         {
+
+        }
+
+        public async Task<IEnumerable<CatalogItem>> GetAll(CancellationToken cancellationToken = default)
+        {
+            var data = await _dbSet.FromSqlRaw("GetAllCatalogItems").ToListAsync(cancellationToken);
+            return data;
         }
 
         /// <summary>

@@ -27,7 +27,8 @@ namespace EshopOnVue.js.Spa.Application.Catalog.Queries
         /// <returns></returns>
         public async Task<IEnumerable<CatalogItemDto>> Handle(CatalogItemsQueryRequest request, CancellationToken cancellationToken)
         {
-            var items = await _catalogItemsRepository.ListAllAsync(cancellationToken);
+            //var items = await _catalogItemsRepository.ListAllAsync(cancellationToken);
+            var items = await _catalogItemsRepository.GetAll(cancellationToken);
             var data = items.Select(i => CatalogItemDtoConverter.Convert(i)).ToList();
             return data;
         }
