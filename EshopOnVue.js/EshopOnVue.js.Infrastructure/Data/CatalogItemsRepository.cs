@@ -3,6 +3,7 @@ using EshopOnVue.js.Core.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace EshopOnVue.js.Infrastructure.Data
@@ -17,13 +18,14 @@ namespace EshopOnVue.js.Infrastructure.Data
         /// <see cref="ICatalogItemRepository.GetPrice(Guid)"/>
         /// </summary>
         /// <param name="catalogItemId"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<decimal?> GetPrice(Guid catalogItemId)
+        public async Task<decimal?> GetPrice(Guid catalogItemId, CancellationToken cancellationToken = default)
         {
             try
             {
                 var price = await _dbSet.Where(c => c.Id == catalogItemId)
-                    .Select(s => s.Price).FirstAsync();
+                    .Select(s => s.Price).FirstAsync(cancellationToken);
 
                 return price;
             }

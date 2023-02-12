@@ -16,13 +16,13 @@ namespace EshopOnVue.js.Spa.Application.Basket.Commands
 
         public async Task<Unit> Handle(AddBasketItemCommand request, CancellationToken cancellationToken)
         {
-            var basket = await _basketRepository.GetBasketWithItems(request.BuyerId);
+            var basket = await _basketRepository.GetBasketWithItems(request.BuyerId, cancellationToken);
             if (basket == null)
             {
                 basket = new Core.Entities.Basket(request.BuyerId);
             }
 
-            var catalogItemPrice = await _catalogItemRepository.GetPrice(request.CatalogItemId);
+            var catalogItemPrice = await _catalogItemRepository.GetPrice(request.CatalogItemId, cancellationToken);
 
             if (catalogItemPrice == null) throw new Exception($"Not price found for catalog item {request.CatalogItemId}");
 

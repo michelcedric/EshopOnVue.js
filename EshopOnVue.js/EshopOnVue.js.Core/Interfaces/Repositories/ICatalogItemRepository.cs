@@ -1,5 +1,6 @@
 ﻿using EshopOnVue.js.Core.Entities;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace EshopOnVue.js.Core.Interfaces.Repositories
@@ -14,6 +15,6 @@ namespace EshopOnVue.js.Core.Interfaces.Repositories
         /// </summary>
         /// <param name="catalogItemId">The catalog item ID</param>
         /// <returns>Return null if the catalog item not exists. Otherwise return the pricing</returns>
-        Task<decimal?> GetPrice(Guid catalogItemId);
+        Task<decimal?> GetPrice(Guid catalogItemId, CancellationToken cancellationToken = default);
     }
 }

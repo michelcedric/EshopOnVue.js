@@ -2,6 +2,7 @@
 using EshopOnVue.js.Core.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace EshopOnVue.js.Infrastructure.Data
@@ -12,11 +13,11 @@ namespace EshopOnVue.js.Infrastructure.Data
         {
         }
 
-        public async Task<Basket> GetBasketWithItems(string buyerId)
+        public async Task<Basket> GetBasketWithItems(string buyerId, CancellationToken cancellationToken = default)
         {
             var basket = await _dbSet
                 .Include(b => b.Items)
-                .FirstOrDefaultAsync(b => b.BuyerId == buyerId);
+                .FirstOrDefaultAsync(b => b.BuyerId == buyerId, cancellationToken);
 
             return basket;
         }
