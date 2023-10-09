@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Core.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EshopOnVue.js.Spa.Tests", "EshopOnVue.js.Spa.Tests\EshopOnVue.js.Spa.Tests.csproj", "{921DB987-EECD-4F31-B7E4-C8126BF91672}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Items", "Solutions Items", "{457A06C7-E111-4C51-9415-CAC69F208D93}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{457A06C7-E111-4C51-9415-CAC69F208D93}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Packages.props = Directory.Packages.props
 		Docker.txt = Docker.txt

@@ -1,2 +1,2 @@
 start cmd /c StartApi.bat 
-nswag run EshopOnWeb.nswag /runtime:Net60
+nswag run EshopOnWeb.nswag /runtime:Net70

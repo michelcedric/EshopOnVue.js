@@ -14,7 +14,7 @@ namespace EshopOnVue.js.Spa.Application.Basket.Commands
             _catalogItemRepository = catalogItemRepository;
         }
 
-        public async Task<Unit> Handle(AddBasketItemCommand request, CancellationToken cancellationToken)
+        public async Task Handle(AddBasketItemCommand request, CancellationToken cancellationToken)
         {
             var basket = await _basketRepository.GetBasketWithItems(request.BuyerId, cancellationToken);
             if (basket == null)
@@ -28,9 +28,7 @@ namespace EshopOnVue.js.Spa.Application.Basket.Commands
 
             basket.AddItem(request.CatalogItemId, catalogItemPrice.Value, 1);
 
-            await _basketRepository.UpdateAsync(basket, cancellationToken);
-
-            return Unit.Value;
+            await _basketRepository.UpdateAsync(basket, cancellationToken);          
         }
     }
 }

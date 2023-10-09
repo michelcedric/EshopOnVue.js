@@ -1,5 +1,4 @@
 using EshopOnVue.js.Infrastructure.Data;
-using MediatR;
 using MinimalApi.Endpoint.Configurations.Extensions;
 using MinimalApi.Endpoint.Extensions;
 using MinimalApi.Endpoint.SwaggerGen.Extensions;
@@ -39,7 +38,7 @@ builder.Services.AddSwaggerGen(options =>
 
 EshopOnVue.js.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
-builder.Services.AddMediatR(typeof(Program));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
 
 var app = builder.Build();
 
